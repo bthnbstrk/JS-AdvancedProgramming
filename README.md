@@ -8,3 +8,5 @@
 [Basic Example](https://bthnbstrk.github.io/JS-AdvancedProgramming/JSEx1.html)
 
 [Classwork4](https://bthnbstrk.github.io/JS-AdvancedProgramming/js.html)
+
+[Classwork5](https://bthnbstrk.github.io/JS-AdvancedProgramming/home.html)
