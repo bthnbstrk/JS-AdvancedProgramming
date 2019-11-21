@@ -10,3 +10,5 @@
 [Classwork4](https://bthnbstrk.github.io/JS-AdvancedProgramming/js.html)
 
 [Classwork5](https://bthnbstrk.github.io/JS-AdvancedProgramming/home.html)
+
+[Classwork7](https://bthnbstrk.github.io/JS-AdvancedProgramming/ödev.html)
