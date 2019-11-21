@@ -42,7 +42,7 @@
       let foundArray = 0;
       let numberFoundMap = 0;
       for (var i = 0; i < 10000; i++) {
-        let id = "215170000"+String(Math.random()).substring(2,5);
+        let id = "215170"+String(Math.random()).substring(2,5);
         let arrayTime = performance.now();
         if(array.includes(id)){
             foundArray++;
