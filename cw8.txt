@@ -1,4 +1,4 @@
-
+Name	Diam	Mass	Radius	Period
 Mercury	0.382	0.06	0.40	0.24
 Venus	0.949	0.82	0.72	0.62
 Earth	1.000	1.00	1.00	1.00
