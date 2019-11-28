@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>CW8</title>
+</head>
+
+<style>
+    body { max-width: 440px; }
+    table { border-collapse: collapse; }
+    th { color: darkslategrey; padding: 5px 5px; }
+    td {
+        border: 1px solid darkslategrey;
+        padding: 35px 85px;
+        text-align: center;
+        position: relative;
+    }
+    td:hover .tip {
+        visibility: visible;
+    }
+    td .tip {
+        visibility: hidden;
+        font-size: small;
+        background-color: darkslategrey;
+        color: white;
+        text-align: center;
+        padding: 5px 5px;
+        position: absolute;
+        left: 5px;
+        top: 20px;
+    }
+</style>
+<script>
+    "use strict";
+    var readingData = [];
+    var word;
+    var columns=["Name","Diam","Mass","Radius","Period"]
+    const url = "https://bthnbstrk.github.io/JS-AdvancedProgramming/cw8.txt";
+    fetch(url)
+        .then(txt=>txt.text())
+        .then(txt =>{
+            let a = txt.split("\n");
+            for (let line of a) {
+                let b = line.split("\t");
+                let diam = b[1], name = b[0], mass = b[2],period=b[3],radius=b[4];
+                readingData.push([name,diam,mass,period,radius]);
+            }
+            let m = readingData.length;
+            let n = readingData[0].length;
+            let row = "<th></th>";
+            for (let k = 0; k <columns.length; k++)
+                row += "<th>"+columns[k]		+"</th>";
+            let text = "<tr>"+row+"</tr>";
+            for (let i = 0; i < m-1; i++) {
+                row = "<th>"+i+"</th>";
+                for (let j = 0; j < n; j++) {
+                    word = readingData[i]
+                    row += "<td>"+word[j]+"</td>";
+                }
+                text += "<tr>"+row+"</tr>";
+            }
+            tablo.innerHTML = text;
+        });
+</script>
+<body>
+<h1 style="margin-left: 50px;font-size: 40px">Planets and Properties</h1>
+<table id="tablo"></table>
+<link rel="manifest" href="manifest.json">
+
+</body>
+</html>
