@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" sizes="192x192" href="/JS/images/JS.png">
+    <title>GitHub Users</title>
+
+    <style>
+        body {
+            max-width: 440px;
+        }
+        img {
+            padding-right: 12px;
+            width: 430px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2 id=title></h2>
+<input type=text id=usr value=bthnbstrk onChange="readUser()">
+<p id=out></p>
+<hr />
+
+
+<script>
+    "use strict";
+    const NL = "\n", BR = "<BR>",
+        URL = "https://api.github.com/users/"
+
+    function error(t) {
+        out.style.color = 'red'
+        out.innerText = t; console.log(t)
+    }
+    function listRepos(b) {
+        if (b.length)
+            out.innerHTML +=
+                b.map(x => x.name).join(", ")
+    }
+    function userData(u) {
+        if (!u || !u.login) {
+            error(usr.value+' not found')
+            return
+        }
+        //u.login is the same as usr.value
+        out.style.color = ''
+        out.innerHTML = ''
+        //start with a tiny image
+        let i = document.createElement("img")
+        i.src = u.avatar_url
+        i.align = "left"
+        out.appendChild(i)
+        //add name and location
+        let s = (u.name? u.name : u.login)
+        s="<h3>"+s+"</h3>"
+
+        var url2="https://api.github.com/users/"+u.login+"/events"
+
+
+
+        if (u.location) s += u.login+"<br> <br> <br> "+u.company + "<br>" + u.location +"<br>Followers:" + u.followers + "<br>Follow:" +u.following +"<br>Public repos:" +u.public_repos
+        // fetch(url2).then(r=>r.json()).then(domake)
+        out.innerHTML += s+BR; console.log(s)
+
+
+/*
+        function domake(data){
+       document.getElementById("out").innerHTML=data.length
+       } */
+
+        //add link to GitHub
+        let h = u.login+".github.io/"
+        let a = document.createElement("a")
+        a.href = "https://"+ h
+        a.target = "NewTab"
+        a.innerText = h
+        out.appendChild(a)
+        //add repo count
+    }
+
+
+    function readUser() {
+        fetch(URL+usr.value)
+            .then(r => r.ok? r.json() : null)
+            .then(userData).catch(error)
+    }
+
+
+    title.innerText = document.title
+ 
+    out.innerText = "Reading data"
+    readUser()
+
+</script>
+
+</body>
+</html>
