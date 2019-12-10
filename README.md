@@ -1,5 +1,8 @@
 ## JS-AdvancedProgramming
 
+[Classwork8](https://bthnbstrk.github.io/JS-AdvancedProgramming/CW8.html)
+
+[Classwork9](https://bthnbstrk.github.io/JS-AdvancedProgramming/CW9.html)
 
 [Classwork1](https://bthnbstrk.github.io/JS-AdvancedProgramming/Ex1.html)
 
@@ -13,7 +16,3 @@
 
 [Classwork7](https://bthnbstrk.github.io/JS-AdvancedProgramming/CW7.html)
 
-[Classwork8](https://bthnbstrk.github.io/JS-AdvancedProgramming/CW8.html)
-
-
-[Classwork9](https://bthnbstrk.github.io/JS-AdvancedProgramming/CW9.html)
