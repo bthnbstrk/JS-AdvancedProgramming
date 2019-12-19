@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1 id="title" style="color:darkblue">Poisson Probabilities for Different Values of  λ </h1>
+
+  <pre id="constant" style="font-weight: bold"></pre>
+
+<div>
+  <pre id="txt" style="font-weight: bold"></pre>
+</div>
+<br><br><br>
+<h1>Batuhan Baştürk 1721221210</h1>
+
+<script>
+    let F=[0.5,1,1.5,2,2.5,3];
+    let Numbers=[0,1,2,3,4,5,6,7,8,9,10,11];
+    let myArray=[];
+    for(let j=0;j<F.length;j++){
+        for(let k=0;k<Numbers.length;k++){
+            if(k==0){
+                myArray[j+k]=(Number(Math.exp(-F[j])).toFixed(4));
+            }
+        }
+    }
+    for(let b=1;b<Numbers.length;b++){
+        for(let c=0;c<F.length;c++){
+            myArray[myArray.length]=(Number((myArray[myArray.length-6]*F[c])/b).toFixed(4));
+        }
+    }
+    let texte="";
+    for(let c=0;c<myArray.length;c++){
+            if(c%6==0){
+                texte+="<br>"+"x="+c/6+"&nbsp";
+            }
+       
+        texte+="&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+myArray[c];
+    }
+    let go="";
+    for(let t=0;t<F.length;t++){
+           
+        go+="&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+"λ="+F[t];
+           
+ 
+    }
+    txt.innerHTML=texte;
+    constant.innerHTML=go;
+
+
+</script>
+</body>
+</html>
+
