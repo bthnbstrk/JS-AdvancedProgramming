@@ -55,5 +55,4 @@
         out.innerText = toplam + " " + "₺";
     }
 
-    out.innerText = hesapla();
-    hesapla();
+   
