@@ -1,8 +1,6 @@
 
     //es.options[es.selectedIndex].value; seçili değer bu şekilde alınır
     "use strict";
-       esdiv.hidden = true;
-    let toplam = 0;
     function myNewFunction(medeni) {
         if (medeni.options[medeni.selectedIndex].text === "Evli") {
             esdiv.hidden = false;
