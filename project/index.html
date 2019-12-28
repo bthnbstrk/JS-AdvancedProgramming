@@ -13,21 +13,21 @@
 <h2 style="margin-left: 40px">AGİ HESAPLAMA 2019</h2>
     <div style="margin-left: 15%">
         <h3>Medeni Durumunuz:
-            <select id="medeni" onChange="myNewFunction(this);">
+            <select id="medeni" onChange="myNewFunction(this);" onchange="hesapla();">
                 <option label="Bekar">Bekar</option>
                 <option label="Evli">Evli</option>
             </select>
         </h3>
         <div id="esdiv">
             <h3>Eş çalışıyormu:
-                <select id="es">
+                <select id="es" onchange="hesapla();">
                     <option label="Evet">Evet</option>
                     <option label="Hayır">Hayır</option>
                 </select>
             </h3>
         </div>
         <h3>Çocuk sayısı:
-            <select id="cocuk">
+            <select id="cocuk" onchange="hesapla();">
                 <option label="Yok">Yok</option>
                 <option label="1">1</option>
                 <option label="2">2</option>
@@ -37,9 +37,8 @@
             </select>
         </h3>
        <div >
-           <p id="out" style="font-size: 40px" ></p>
+           <p id="out" style="font-size: 40px" ></p><br><br><br><br>
        </div>
-        <input type=button class="button"  value="Hesapla" onClick="hesapla()" style="width: 200px;font-size: 30px;margin-right:15px"><br><br><br>
       Referans:<a href="http://www.muhasebetr.com/asgari-gecim-indirimi-agi/">2019 Agi bilgileri</a>
     </div>
 </div>
